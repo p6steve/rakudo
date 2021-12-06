@@ -1,6 +1,12 @@
 p6steve fork to cover macOS M1 via vftools with
 FROM ubuntu:latest --platform=inux/arm64
 
+Also to avoid Digest::SHA256::Native bug, install --deps-only with the raku toolchain
+	&& zef install JSON::Tiny Digest::HMAC Digest::SHA256::Native \
+
+Before we purge ahead of the anaconda toolchain
+     && apt-get purge -y --auto-remove $buildDeps
+
 Instructions:
 Every now and then…
 - git clone https://github.com/p6steve/rakudo
