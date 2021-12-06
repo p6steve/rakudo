@@ -13,6 +13,7 @@ Every now and then…
 - cd rakudo/2021.05
 - docker build -t p6steve/rakudo:ubuntu-arm64-2021.05
 - docker push p6steve/rakudo:ubuntu-arm64-2021.05
+- - docker run -it p6steve/rakudo:ubuntu-arm64-2021.05
 
 (Copy 2021.05 and merge for other versions)
 
