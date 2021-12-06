@@ -1,4 +1,4 @@
-FROM ubuntu:latest --platform=linux/arm64
+FROM --platform=linux/arm64 ubuntu:latest
 
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
