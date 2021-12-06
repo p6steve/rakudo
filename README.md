@@ -1,3 +1,18 @@
+p6steve fork to cover macOS M1 via vftools with
+FROM ubuntu:latest --platform=inux/arm64
+
+Instructions:
+Every now and then…
+- git clone https://github.com/p6steve/rakudo
+- cd rakudo/2021.05
+- docker build -t p6steve/ubuntu-rakudo-2021.05
+- docker push p6steve/ubuntu-rakudo-2021.05
+
+(Copy 2021.05 and merge for other versions)
+
+Versions covered:
+- 2021.05
+
 # Rakudo compiler for The Raku Programming Language
 
 > Docker images for **Raku**
