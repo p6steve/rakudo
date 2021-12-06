@@ -3,9 +3,9 @@ FROM ubuntu:latest --platform=inux/arm64
 
 Also to avoid Digest::SHA256::Native bug, install --deps-only with the raku toolchain
 	&& zef install JSON::Tiny Digest::HMAC Digest::SHA256::Native \
-
 Before we purge ahead of the anaconda toolchain
      && apt-get purge -y --auto-remove $buildDeps
+And drop pandoc for now (since that's an amd64 image)
 
 Instructions:
 Every now and then…
