@@ -1,12 +1,19 @@
 p6steve fork to cover macOS M1 via vftools with
 FROM ubuntu:latest --platform=inux/arm64
 
+Also to avoid Digest::SHA256::Native bug, install --deps-only with the raku toolchain
+	&& zef install JSON::Tiny Digest::HMAC Digest::SHA256::Native \
+Before we purge ahead of the anaconda toolchain
+     && apt-get purge -y --auto-remove $buildDeps
+And drop pandoc for now (since that's an amd64 image)
+
 Instructions:
 Every now and then…
 - git clone https://github.com/p6steve/rakudo
 - cd rakudo/2021.05
-- docker build -t p6steve/ubuntu-rakudo-2021.05
-- docker push p6steve/ubuntu-rakudo-2021.05
+- docker build -t p6steve/rakudo:ubuntu-arm64-2021.05 .
+- docker push p6steve/rakudo:ubuntu-arm64-2021.05
+- docker run -it p6steve/rakudo:ubuntu-arm64-2021.05
 
 (Copy 2021.05 and merge for other versions)
 
