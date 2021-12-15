@@ -29,7 +29,7 @@ RUN buildDeps="gcc \
         --backends=moar --moar-option='--toolchain=gnu' --relocatable \
         && make && make install \
     ) \
-    && cd .. && rm -rf rakudo rakudo.tar.gz \
+    && rm -rf rakudo rakudo.tar.gz \
     && git clone -b master --single-branch https://github.com/ugexe/zef.git \
     && cd zef \
     && raku -I. bin/zef install . && cd .. && rm -rf zef \
