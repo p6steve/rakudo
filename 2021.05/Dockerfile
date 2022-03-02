@@ -3,7 +3,6 @@ FROM --platform=linux/arm64 ubuntu:latest
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     TERM=xterm \
-    #PANDOC=2.14.0.2 \
     RAKUDO=2021.05
 
 ENV PATH=$PATH:/usr/share/perl6/site/bin
@@ -36,8 +35,6 @@ RUN buildDeps="gcc \
     && zef install fez \
     && zef install Linenoise App::Mi6 App::Prove6 \
     && zef install JSON::Tiny Digest::HMAC Digest::SHA256::Native \
-    #&& wget https://github.com/jgm/pandoc/releases/download/${PANDOC}/pandoc-${PANDOC}-1-amd64.deb \
-    #&& dpkg -i pandoc-${PANDOC}-1-amd64.deb && rm pandoc-${PANDOC}-1-amd64.deb \
     && apt-get purge -y --auto-remove $buildDeps
 
 RUN echo ' \ 
